@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Same Game Gravity</title>
+  <meta name="Author" content="Gaetan Renaudeau">
+  <meta name="Category" content="Game">
+  <meta name="Keywords" content="Same, Game, puzzle, HTML5, CSS3">
+  <meta name="Description" content="Same Game Gravity is a mind-bending ball removal puzzle game where you try to remove all of the balls from the board. Balls can only be removed when they are grouped with more balls of the same color. The balls are influenced by gravity. Control gravity and no ball will escape you!">
+  <link href="index.css" rel="stylesheet">
+  <link href="jplayer.blue.monday.css" rel="stylesheet">
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.jplayer.min.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="game">
+      <iframe id="gameframe" src="game.html?v=" frameborder="0"></iframe>
+    </div>
+    <footer>
+  <div id="jplayer"></div>
+  <div class="jp-audio">
+    <div class="jp-type-single">
+      <div id="jp_interface_1" class="jp-interface">
+        <ul class="jp-controls">
+          <li><a href="#" class="jp-play" tabindex="1">play</a></li>
+          <li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+          <li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+          <li><a href="#" class="jp-mute" tabindex="1">mute</a></li>
+          <li><a href="#" class="jp-unmute" tabindex="1">unmute</a></li>
+        </ul>
+        <div class="jp-volume-bar">
+          <div class="jp-volume-bar-value"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+$(document).ready(function(){
+  var directory = "http://data.greweb.fr/same/musics/";
+  var medias = [
+    { mp3: directory+"lets_go_back_to_the_rock.mp3", 
+      oga: directory+"lets_go_back_to_the_rock.ogg" },
+    { mp3: directory+"now.mp3", 
+      oga: directory+"now.ogg" },
+    { mp3: directory+"selected.mp3", 
+      oga: directory+"selected.ogg" },
+    { mp3: directory+"together.mp3", 
+      oga: directory+"together.ogg" }
+  ];
+  medias.sort(function(){ return Math.random()>.5 }); // randomize playlist
+  var i = 0;
+  var next = function() {
+    return i = i+1==medias.length ? 0 : i+1;
+  }
+  $("#jplayer").jPlayer({
+    volume: 0.1,
+    ready: function () {
+      $(this).jPlayer("setMedia", medias[i]).jPlayer("play");
+    },
+    ended: function (event) {
+      $(this).jPlayer("setMedia", medias[next()]).jPlayer("play");
+    },
+    supplied: "mp3, oga"
+  });
+});
+</script>
+    </footer>
+  </div>
+</body>
+</html>

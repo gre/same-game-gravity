@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1;" /> 
+  
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="game-version-type" content="" />
+  <meta name="game-version" content="1.1" />
+  <title>Same</title>
+  <link href="game.css" rel="stylesheet">
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.ba-hashchange.min.js"></script>
+  <script type="text/javascript" src="jquery.tmpl.min.js"></script>
+  <script type="text/javascript" src="jquery-css-transform.js"></script>
+  <script type="text/javascript" src="jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="modernizr.custom.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="game.desktop.js"></script>
+  <script type="text/javascript" src="i18n.js"></script>
+  <script type="text/javascript" src="md5.js"></script>
+</head>
+
+<body>
+  
+  <noscript>Vous devez activer Javascript pour faire fonctionner ce jeu.</noscript>
+
+  
+  <div id="audios" style="display: none;">
+    <audio class="pop" preload="auto" src="pop.mp3"></audio>
+    <audio class="pop" preload="auto" src="pop.ogg"></audio>
+    <audio class="swosh" preload="auto" src="swosh.mp3"></audio>
+    <audio class="swosh" preload="auto" src="swosh.ogg"></audio>
+  </div>
+  <div id="main" style="display: none;">
+    <section id="menu">
+      <span class="gameVersion" style="float: right;">1.1</span>
+      <h1><img src="logo.png" /> SAME Game Gravity <span class="gameVersionType"></span></h1>
+      <div class="actions continueGame">
+        <a class="button i18n-continue_game" href="#!/game/continue">Continue game</a>
+      </div>
+      <ul class="menu">
+        <li class="newGame">
+          <dl>
+          <dt><span class="i18n-new_game">New game</span> :</dt>
+          <dd class="difficulty easy"><a class="i18n-easy" href="#!/game/new/easy">Easy</a></dd>
+          <dd class="difficulty normal"><a class="i18n-normal" href="#!/game/new/normal">Normal</a></dd>
+          <dd class="difficulty hard"><a class="i18n-hard" href="#!/game/new/hard">Hard</a></dd>
+          </dl>
+        </li>
+      </ul>
+      <div class="actions center">
+        <a class="i18n-help" href="#!/help">Help</a>
+        <a class="i18n-scores" href="#!/highscores">Scores</a>
+      </div>
+      
+      <footer>
+         
+        <div id="share">
+          <div class="addthis_toolbox addthis_default_style" addthis:url="http://same.greweb.fr/">
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_facebook"></a>
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+          </div>
+          <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+          <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dc65c23519c9300"></script>
+        </div>
+        <p class="icons">
+          <img src="icons/360.png" alt="360°" title="Move the game in 360 degres" />
+          <img src="icons/reflexion.png" alt="Reflexion game" title="Reflexion game" />
+          <img src="icons/scores.png" alt="Scores" title="Social score system" />
+          <img src="icons/css.png" alt="CSS3" title="Powered by CSS3" />
+          <img src="icons/html5.png" alt="HTML5" title="Powered by HTML5" />
+        </p>
+        <p><a href="http://same.greweb.fr/" class="i18n-wantMore"></a> <span class="i18n-tryOn"></span></p>
+      </footer>
+      
+    </section>
+    
+    <section id="highscores">
+      <div class="content">
+        <h3 class="i18n-totalscore">Total score</h3>
+        <div class="levelProgress">
+          <div class="levelContainer"><span class="i18n-level">Level</span>: <span class="level">?</span></div>
+          <div class="totalScoreContainer"><span class="totalScore">?</span></div>
+          <span class="progress" style="width: 50%;"></span>
+        </div>
+        
+        <h3 class="i18n-highscores">Highscores</h3>
+        <div class="difficulties">
+          <dl class="difficulty easy"><dt class="i18n-easy label">Easy</dt> <dd class="easyScore" /></dl>
+          <dl class="difficulty normal"><dt class="i18n-normal label">Normal</dt> <dd class="normalScore" /></dl>
+          <dl class="difficulty hard"><dt class="i18n-hard label">Hard</dt> <dd class="hardScore" /></dl>
+        </div>
+        
+        <hr/>
+        
+        <div class="center">
+          <a href="#!/highscores/users" class="i18n-players_scores">Scores des joueurs</a>
+        </div>
+        
+        <div class="share">
+          <a class="button i18n-send_scores twitter" href="javascript:;">Send scores</a>
+        </div>
+        
+      </div>
+      <div class="actions">
+        <a class="i18n-back back" href="#!/">Back</a>
+        <a class="i18n-reset resetHighscores" href="javascript:;">Reset</a>
+      </div>
+    </section>
+    
+    <section id="user_scores">
+      <div class="content">
+        <script type="text/javascript" src="http://same.greweb.fr/public/javascripts/same.scores.js?v="></script>
+        <script type="text/javascript">
+          SCORE = new same.Scores({
+            period: ['all', 'month', 'week'],
+            width: '100%',
+            height: '80%',
+            type: ['total', 'hs_easy', 'hs_normal', 'hs_hard'],
+            platform: 'web',
+            display: 'inline',
+            theme: {
+              bg: '#000',
+              color: '#fff',
+              scores_bg: '#222',
+              scores_color: '#fff',
+              link: '#fed'
+            }
+          }).init();
+        </script>
+      </div>
+      <div class="actions">
+        <a class="i18n-back back" href="#!/highscores">Back</a>
+      </div>
+    </section>
+    
+    <section id="help-1" class="help">
+      <div class="content">
+        <h2 class="i18n-gamegoal"></h2>
+        <p class="i18n-gamegoal_1"></p>
+        <p class="i18n-gamegoal_2"></p>
+        <p class="i18n-gamegoal_3"></p>
+      </div>
+      <div class="actions">
+        <a class="i18n-back back" href="#!/">Back</a>
+        <a class="i18n-next next" href="#!/help/2">Next</a>
+      </div>
+    </section>
+    
+    <section id="help-2" class="help">
+      <div class="content">
+        <h2 class="i18n-thegravity"></h2>
+        <p class="i18n-press_arrow_explanation"></p>
+        <p style="text-align: center;"><img src="keys.png" width="100%" style="max-width: 600px;" /></p>
+      </div>
+      <div class="actions">
+        <a class="i18n-back back" href="#!/help/1">Back</a>
+        <a class="i18n-next next" href="#!/help/3">Next</a>
+      </div>
+    </section>
+    
+    <section id="help-3" class="help">
+      <div class="content">
+        <h2 class="i18n-thescoressystem"></h2>
+        <p class="i18n-scores_explanation"></p>
+        <p style="text-align: center"><img src="scores_exemple.png" width="100%" style="max-width: 300px;" /></p>
+      </div>
+      <div class="actions">
+        <a class="i18n-back back" href="#!/help/2">Back</a>
+        <a class="i18n-next next" href="#!/help/4">Next</a>
+      </div>
+    </section>
+    
+    <section id="help-4" class="help">
+      <div class="content">
+        <h2 class="i18n-thanks"></h2>
+        <p style="color: #999;">Same Game Gravity <span class="gameVersion">1.1</span> <span class="gameVersionType"></span></p>
+        <p class="i18n-lookforward_feedback"></p>
+        <br/>
+        <p><a href="http://same.greweb.fr/">http://same.greweb.fr/</a></p>
+      </div>
+      <div class="actions">
+        <a class="i18n-back back" href="#!/help/3">Back</a>
+        <a class="i18n-next next" href="#!/">Next</a>
+      </div>
+    </section>
+    
+    <section id="game">
+      <div class="turnleft"></div>
+      <div class="turnright"></div>
+      <div class="gameStatus">
+        <a class="i18n-back back" href="#!/">Back</a>
+        <span class="timeline">
+          <span class="remainingSeconds"><span class="remainingSecondsTime"></span> s</span>
+        </span>
+      </div>
+      <div id="gameContainer">
+        <canvas class="highlight" width="400" height="300"></canvas>
+        <canvas class="main" width="400" height="300"></canvas>
+      </div>
+    </section>
+    
+    <section id="finish">
+      <h2 class="i18n-gameover gameover">Game over.</h2>
+      <h2 class="i18n-congratulations congratulations">Congratulations!</h2>
+      <div class="scoreContainer">
+        <span class="remainingBlocksScoreTitle"></span><br/>
+        <span class="remainingBlocksScoreDesc score score1">+ <span class="remainingBlocksScore"></span> points</span>
+      </div>
+      <div class="scoreContainer"><span class="i18n-best_blocks">Best blocks</span>:<br/>
+        <ul class="bestDestroyed"></ul><br/>
+        <span class=" score2 score">+ <span class="destructionScore"></span> points</span>
+      </div>
+      <div class="scoreContainer"><span class="i18n-time_bonus">Time bonus</span>:<br/>
+        <span class="timeScoreDesc score score3">+ <span class="timeScore"></span> points</span>
+      </div>
+      <h2 class="score score4">Total: <span class="totalScore"></span><span class="newRecord">record</span></h2>
+      <div class="actions">
+        <a class="i18n-menu back" href="#!/">Menu</a>
+        <a class="i18n-playAgain again" href="javascript:;">Play again</a>
+      </div>
+    </section>
+  </div>
+  
+  <script id="bestDestroyedLi" type="text/x-jquery-tmpl">
+    <li style="color: ${clrStyle};"><span class="combo">${nb}</span> <span class="bull" style="background-color: ${clrStyle};"></span></li>
+  </script>
+  
+  <script id="adTmpl" type="text/x-jquery-tmpl">
+    <iframe frameborder="0" src="ad.html" style="width: 100%; height: 50px;"></iframe>
+  </script>
+  
+  <script id="twitterTmpl" type="text/x-jquery-tmpl">
+    http://same.greweb.fr/ - 
+    <span class="i18n-my_scores"></span> - 
+    lvl:${level}; total:${totalscore}; hs:${easy},${normal},${hard}; @samegamegravity 
+    #${version} 
+  </script>
+  
+  
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-9919624-5']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+

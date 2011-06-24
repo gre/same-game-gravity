@@ -1,0 +1,9 @@
+--- Same Game Gravity For Desktop ---
+
+Copyright (C) 2011 @greweb
+Licence: GPL v3 - https://github.com/gre/same-game-gravity
+
+Same Game Gravity is a mind-bending ball removal puzzle game where you try 
+to remove all of the balls from the board. Balls can only be removed when 
+they are grouped with more balls of the same color. 
+The balls are influenced by gravity. 
