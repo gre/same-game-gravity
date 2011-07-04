@@ -51,7 +51,9 @@ en: {
   scores_explanation: 'Share your scores on Twitter to appear on highscores!',
   press_arrow_explanation: 'Use right and left arrow keys to apply gravity and change balls arrangement!',
   wantMore: "Want More?",
-  tryOn: "Try on mobile (iPhone, Android) and tablet (iPad)!"
+  tryOn: "Try on mobile (iPhone, Android) and tablet (iPad)!",
+  must_be_connected: "You must be connected to be able to send your scores",
+  connect: "Connect"
 },
 fr: {
   // DOM
@@ -103,7 +105,9 @@ fr: {
   scores_explanation: 'Partagez vos scores sur Twitter pour apparaître dans les meilleurs scores!',
   press_arrow_explanation: 'Utilisez les flêches gauche et droite pour changer la gravité et modifier la disposition des billes!',
   wantMore: "Vous en voulez encore?",
-  tryOn: "Essayez la version mobile (iPhone, Android) ou tablette (iPad)!"
+  tryOn: "Essayez la version mobile (iPhone, Android) ou tablette (iPad)!",
+  must_be_connected: "Vous devez être connecté pour pouvoir envoyer vos scores",
+  connect: "Se connecter"
 }
 });
 });

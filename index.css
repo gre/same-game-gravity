@@ -4,11 +4,33 @@ a { color: #ffffcc; }
 
 p { padding: 0; margin: 2px; }
 
-#wrapper { width: 880px; margin: 20px auto; position: relative; }
+#wrapper { width: 740px; margin: 0px auto; position: relative; }
 
-#adLeft { position: absolute; top: 0; left: 0; }
+aside.left { position: fixed; top: 0; left: 0; text-align: right; padding: 0px 10px; background: rgba(50, 50, 50, 0.7); border: 1px solid rgba(255, 255, 255, 0.4); border-left: none; -moz-border-radius-topright: 10px; -webkit-border-top-right-radius: 10px; -o-border-top-right-radius: 10px; -ms-border-top-right-radius: 10px; -khtml-border-top-right-radius: 10px; border-top-right-radius: 10px; -moz-border-radius-bottomright: 10px; -webkit-border-bottom-right-radius: 10px; -o-border-bottom-right-radius: 10px; -ms-border-bottom-right-radius: 10px; -khtml-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px; margin-top: 20px; }
+aside.left .addthis_toolbox a { float: none !important; display: block; height: 32px; margin: 20px 0; }
 
-#adRight { position: absolute; top: 0; right: 0; }
+aside.right { position: fixed; top: 0; right: 0; padding: 10px; background: rgba(50, 50, 50, 0.7); -moz-border-radius-topleft: 10px; -webkit-border-top-left-radius: 10px; -o-border-top-left-radius: 10px; -ms-border-top-left-radius: 10px; -khtml-border-top-left-radius: 10px; border-top-left-radius: 10px; -moz-border-radius-bottomleft: 10px; -webkit-border-bottom-left-radius: 10px; -o-border-bottom-left-radius: 10px; -ms-border-bottom-left-radius: 10px; -khtml-border-bottom-left-radius: 10px; border-bottom-left-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.4); border-right: none; margin-top: 20px; text-align: left; }
+aside.right ul.download, aside.right ul.download li { display: block; padding: 0; margin: 0; list-style: none; vertical-align: top; }
+
+img.device-icon { height: 50px; border: 4px solid transparent; -webkit-transition: 0.4s; -moz-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; border-radius: 10px; padding: 5px; }
+
+img.device-icon.android { padding: 5px 8px; }
+
+img.device-icon.android:hover { border-color: #a4ca39; }
+
+img.device-icon.desktop:hover { border-color: #ffaa22; }
+
+img.device-icon.iphone { padding: 5px 15px; }
+
+img.device-icon.iphone:hover, img.device-icon.ipad:hover { border-color: #999999; }
+
+img.device-icon.ipad { padding: 5px 10px; }
+
+img.device-icon.facebook:hover { border-color: #496ba4; }
+
+img.device-icon.chromeapp:hover { border-color: yellow; }
+
+img.qrcode { display: none; }
 
 #game { width: 600px; margin: 10px auto; -moz-transition-duration: 0.5s; -webkit-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; }
 #game.rotate90 { -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); -o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }

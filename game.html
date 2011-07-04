@@ -3,10 +3,18 @@
 <head>
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1;" /> 
   
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="game-version-type" content="" />
   <meta name="game-version" content="1.1" />
-  <title>Same</title>
+  
+  <meta property="og:title" content="Same Game Gravity" />
+  <meta property="og:type" content="game" />
+  <meta property="og:url" content="http://apps.facebook.com/samegamegravity/" />
+  <meta property="og:image" content="http://same.greweb.fr/public/images/logo.png" />
+  <meta property="og:site_name" content="Same Game Gravity" />
+  <meta property="fb:admins" content="100001851792344" />
+  
+  <title>Same Game Gravity</title>
   <link href="game.css" rel="stylesheet">
   <script type="text/javascript" src="jquery.min.js"></script>
   <script type="text/javascript" src="jquery.ba-hashchange.min.js"></script>
@@ -54,18 +62,6 @@
       </div>
       
       <footer>
-         
-        <div id="share">
-          <div class="addthis_toolbox addthis_default_style" addthis:url="http://same.greweb.fr/">
-            <a class="addthis_button_tweet"></a>
-            <a class="addthis_button_facebook"></a>
-            <a class="addthis_button_preferred_1"></a>
-            <a class="addthis_button_preferred_2"></a>
-            <a class="addthis_button_preferred_3"></a>
-          </div>
-          <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
-          <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dc65c23519c9300"></script>
-        </div>
         <p class="icons">
           <img src="icons/360.png" alt="360°" title="Move the game in 360 degres" />
           <img src="icons/reflexion.png" alt="Reflexion game" title="Reflexion game" />
@@ -73,7 +69,8 @@
           <img src="icons/css.png" alt="CSS3" title="Powered by CSS3" />
           <img src="icons/html5.png" alt="HTML5" title="Powered by HTML5" />
         </p>
-        <p><a href="http://same.greweb.fr/" class="i18n-wantMore"></a> <span class="i18n-tryOn"></span></p>
+        <p><a href="http://same.greweb.fr/">same.greweb.fr</a> - <span class="i18n-wantMore"></span><br/>
+        <span class="i18n-tryOn"></span></p>
       </footer>
       
     </section>
@@ -101,8 +98,9 @@
         </div>
         
         <div class="share">
-          <a class="button i18n-send_scores twitter" href="javascript:;">Send scores</a>
+          <a class="button i18n-send_scores twitter" href="javascript:;">Send my scores</a>
         </div>
+        
         
       </div>
       <div class="actions">
@@ -179,8 +177,14 @@
         <h2 class="i18n-thanks"></h2>
         <p style="color: #999;">Same Game Gravity <span class="gameVersion">1.1</span> <span class="gameVersionType"></span></p>
         <p class="i18n-lookforward_feedback"></p>
-        <br/>
         <p><a href="http://same.greweb.fr/">http://same.greweb.fr/</a></p>
+        <br/>
+        <h2>Mobile :</h2>
+        <ul class="download">
+      <li><a target="_blank" class="download" href="http://market.android.com/details?id=fr.gaetanrenaudeau.samegame.free"><img class="device-icon android" src="http://same.greweb.fr/public/images/android.png" alt="Android" /><img class="qrcode" src="http://chart.apis.google.com/chart?chs=100x100&cht=qr&chld=|2&chl=http%3A%2F%2Fmarket.android.com%2Fdetails%3Fid%3Dfr.gaetanrenaudeau.samegame.free" /></a></li>
+      <li><a class="download" href="javascript: alert('Available soon! Stay tuned!');"><img class="device-icon iphone" src="http://same.greweb.fr/public/images/iphone.png" alt="iPhone" /></a></li>
+      <li><a class="download" href="javascript: alert('Available soon! Stay tuned!');"><img class="device-icon ipad" src="http://same.greweb.fr/public/images/ipad.png" alt="iPad" /></a></li>
+    </ul>
       </div>
       <div class="actions">
         <a class="i18n-back back" href="#!/help/3">Back</a>
@@ -252,5 +256,7 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script>
+
+
 </body>
 
