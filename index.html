@@ -6,6 +6,8 @@
   <meta name="Category" content="Game">
   <meta name="Keywords" content="Same, Game, puzzle, HTML5, CSS3">
   <meta name="Description" content="Same Game Gravity is a mind-bending ball removal puzzle game where you try to remove all of the balls from the board. Balls can only be removed when they are grouped with more balls of the same color. The balls are influenced by gravity. Control gravity and no ball will escape you!">
+  
+  <link rel="shortcut icon" type="image/png" href="http://same.greweb.fr/public/images/favicon.png">
   <link href="index.css" rel="stylesheet">
   <link href="jplayer.blue.monday.css" rel="stylesheet">
   <script type="text/javascript" src="jquery.min.js"></script>
@@ -17,9 +19,9 @@
       <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
       <a class="addthis_button_twitter"></a>
       <a class="addthis_button_facebook"></a>
+      <a class="addthis_button_preferred_1"></a>
+      <a class="addthis_button_preferred_2"></a>
       <a class="addthis_button_preferred_3"></a>
-      <a class="addthis_button_preferred_4"></a>
-      <a class="addthis_button_preferred_5"></a>
       </div>
       <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
       <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dc65c23519c9300"></script>
@@ -31,9 +33,9 @@
 
     <aside class="right">
     <ul class="download">
-      <li><a target="_blank" class="download" href="http://market.android.com/details?id=fr.gaetanrenaudeau.samegame.free"><img class="device-icon android" src="http://same.greweb.fr/public/images/android.png" alt="Android" /><img class="qrcode" src="http://chart.apis.google.com/chart?chs=100x100&cht=qr&chld=|2&chl=http%3A%2F%2Fmarket.android.com%2Fdetails%3Fid%3Dfr.gaetanrenaudeau.samegame.free" /></a></li>
-      <li><a class="download" href="javascript: alert('Available soon! Stay tuned!');"><img class="device-icon iphone" src="http://same.greweb.fr/public/images/iphone.png" alt="iPhone" /></a></li>
-      <li><a class="download" href="javascript: alert('Available soon! Stay tuned!');"><img class="device-icon ipad" src="http://same.greweb.fr/public/images/ipad.png" alt="iPad" /></a></li>
+      <li><a target="_blank" class="download" href="http://market.android.com/details?id=fr.gaetanrenaudeau.samegame.free"><img class="device-icon android" src="http://same.greweb.fr/public/images/android.png" alt="Android" /></a></li>
+      <li><a class="download" target="_blank" href="http://itunes.apple.com/us/app/same-game-gravity/id445606743"><img class="device-icon iphone" src="http://same.greweb.fr/public/images/iphone.png" alt="iPhone" /></a></li>
+      <li><a class="download" target="_blank" href="http://itunes.apple.com/us/app/same-game-gravity-for-ipad/id446790701"><img class="device-icon ipad" src="http://same.greweb.fr/public/images/ipad.png" alt="iPad" /></a></li>
       <li><a target="_blank" class="download" href="https://chrome.google.com/webstore/detail/eibjpmiiheipmgfhffjpdmojoagccijb"><img class="device-icon chromeapp" src="http://same.greweb.fr/public/images/chromeapp.png" alt="Chrome app" /></a></li>
       <li><a target="_blank" class="download" href="http://apps.facebook.com/samegamegravity/"><img class="device-icon facebook" src="http://same.greweb.fr/public/images/facebook.png" alt="Facebook" /></a></li>
     </ul>
@@ -77,7 +79,7 @@ $(document).ready(function(){
   $("#jplayer").jPlayer({
     volume: 0.1,
     ready: function () {
-      $(this).jPlayer("setMedia", medias[i]).jPlayer("play");
+      $(this).jPlayer("setMedia", medias[i]).jPlayer("stop");
     },
     ended: function (event) {
       $(this).jPlayer("setMedia", medias[next()]).jPlayer("play");
