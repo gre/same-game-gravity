@@ -54,7 +54,7 @@ a.button, .actions a { background: #ffffcc; color: black; padding: 4px 16px; -mo
 
 .gameVersion { font-size: 0.5em; vertical-align: top; color: #aaaaaa; }
 
-ul.menu { padding: 0; margin: 0; list-style: none; text-align: center; }
+dl.menu { padding: 0; margin: 0; text-align: center; }
 
 #menu .actions { margin: 15px 30px; text-align: center; }
 #menu .difficulty a { font-size: 1.2em; background: black; margin: 15px 30px; display: block; -moz-border-radius: 20px; -webkit-border-radius: 20px; -o-border-radius: 20px; -ms-border-radius: 20px; -khtml-border-radius: 20px; border-radius: 20px; border: 4px solid; }
